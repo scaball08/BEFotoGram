@@ -78,6 +78,7 @@ class FileSystem {
         const pathFoto = path_1.default.resolve(__dirname, '../uploads', userId, 'posts', img);
         const existe = fs_1.default.existsSync(pathFoto);
         if (!existe) {
+            return path_1.default.resolve(__dirname, '../assets/400x250.jpg');
         }
         return pathFoto;
     }

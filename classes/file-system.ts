@@ -102,7 +102,7 @@ export class FileSystem {
     const existe = fs.existsSync(pathFoto);
 
     if(!existe){
-      
+      return path.resolve(__dirname,'../assets/400x250.jpg');
     }
 
 
