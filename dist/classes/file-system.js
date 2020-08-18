@@ -76,6 +76,9 @@ class FileSystem {
     getFotoUrl(userId, img) {
         // path POST
         const pathFoto = path_1.default.resolve(__dirname, '../uploads', userId, 'posts', img);
+        const existe = fs_1.default.existsSync(pathFoto);
+        if (!existe) {
+        }
         return pathFoto;
     }
 }

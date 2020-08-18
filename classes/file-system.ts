@@ -98,7 +98,13 @@ export class FileSystem {
       'posts',
       img
     );
-    
+
+    const existe = fs.existsSync(pathFoto);
+
+    if(!existe){
+      
+    }
+
 
     return pathFoto;
   }
