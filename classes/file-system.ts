@@ -98,6 +98,7 @@ export class FileSystem {
       'posts',
       img
     );
+    
 
     return pathFoto;
   }
