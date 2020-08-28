@@ -3,6 +3,7 @@ import userRoutes from './routes/usuario.routes';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import fileUpload from 'express-fileupload';
+import cors from 'cors';
 import postRoutes from './routes/post.routes';
 
 const server = new Server();
@@ -16,6 +17,8 @@ server.app.use(bodyParser.json());
 //para que permita user los archivos tremporales del 'fs'
 server.app.use(fileUpload({ useTempFiles: true }));
 
+// config CORSS
+server.app.use(cors({origin:true,credentials:true}));
 // Rutas de mi aplicacion
 server.app.use('/user', userRoutes);
 server.app.use('/post', postRoutes);
