@@ -8,6 +8,7 @@ const usuario_routes_1 = __importDefault(require("./routes/usuario.routes"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const express_fileupload_1 = __importDefault(require("express-fileupload"));
+const cors_1 = __importDefault(require("cors"));
 const post_routes_1 = __importDefault(require("./routes/post.routes"));
 const server = new server_1.default();
 // Body parser
@@ -17,6 +18,8 @@ server.app.use(body_parser_1.default.json());
 // configurar :se deve enviar  un obj  con la propiedad 'useTempFiles'
 //para que permita user los archivos tremporales del 'fs'
 server.app.use(express_fileupload_1.default({ useTempFiles: true }));
+// config CORSS
+server.app.use(cors_1.default({ origin: true, credentials: true }));
 // Rutas de mi aplicacion
 server.app.use('/user', usuario_routes_1.default);
 server.app.use('/post', post_routes_1.default);
